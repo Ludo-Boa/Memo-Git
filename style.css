@@ -9,12 +9,12 @@ h1 {
 }
 
 .terminal {
-  background-color: #bc45ac;
+  background-color: #000;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
 }
 section {
   background-color: #fff7df;
-  padding: 25px;  
+  padding: 25px;
 }
