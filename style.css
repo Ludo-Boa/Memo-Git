@@ -2,3 +2,10 @@ h1 {
   color: black;
   text-align: center;
 }
+
+.terminal {
+  background-color: #bc45ac;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
