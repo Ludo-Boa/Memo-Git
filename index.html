@@ -13,12 +13,50 @@
           <h1>Memo Git</h1>
         </div>
       </div>
+
+      <div class="page-header">
+        <h2>Créer mon premier Repo</h2>
+      </div>
       <div class="row">
         <div class="col-lg-12">
           <section>
-            <div class="page-header">
-              <h2>Les Branches</h2>
-            </div>
+            <p>Créer un dossier:
+              <span class="terminal">mkdir <small>nom-du-dossier</small></span>
+            </p>
+            <p>Créer un fichier:
+              <span class="terminal">touch <small>nom-du-fichier</small></span>
+            </p>
+            <p>Ce placer dans le dossier avec la commande <strong>cd</strong> dans le Terminal</p>
+            <ul>
+              <li>Pour activer un dossier comme repository Git,
+                il suffit de se placer dans ce dossier avec le Terminal puis d'utiliser la commande <strong>git init</strong>.</li>
+              <li>Pour gérer un repository, Git génère un index de tous les fichiers dont il doit faire le suivi.
+                Lorsque vous créez un fichier dans un repository,
+                vous devez donc l'ajouter à l'index Git à l'aide de la commande
+                <strong>git add nomDeVotreFichier.extension</strong>. Par exemple :<br />
+                 <span class="terminal">git add <small>nom-du-fichier.extension</small></span></li>
+            </ul><br />
+              <p>Pour gagner du temps, on peut ajouter tous les fichiers dans le répertoire courant avec:
+                <span class="terminal">git add .</span>
+              </p>
+              <p>
+                Lorsque l'on doit modifier notre repository,
+                nous devons demander à Git d'enregistrer nos modifications en faisant un <strong>git commit</strong>.
+                L'option <strong>-m</strong> nous permet de lui envoyer un message décrivant les modifications effectuées,
+                ce qui s'avèrera très utile par la suite. Par exemple :<br />
+                 <span class="terminal">git commit -m "Add index.html"</span>
+              </p>
+          </section>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2>Les Branches</h2>
+          </div>
+          <section>
             <p><strong>Créer une branche:</strong>
               <span class="terminal">git branch <small>nom-de-la-branche</small></span>
             </p>
