@@ -44,12 +44,30 @@
                 nous devons demander à Git d'enregistrer nos modifications en faisant un <strong>git commit</strong>.
                 L'option <strong>-m</strong> nous permet de lui envoyer un message décrivant les modifications effectuées,
                 ce qui s'avèrera très utile par la suite. Par exemple :<br />
-                 <span class="term">git commit -m "Add index.html"</span>
+                 <span class="term">git commit -m <small>"Add index.html"</small></span>
               </p>
+              <p>Petite astuce pour gagner du temps:<br />
+                lorsque nous mettons à jour un fichier dans notre repository, nous devons procéder en deux étapes :
+              </p>
+              <ol>
+                <li>Ajouter notre fichier à l'index avec la commande <strong>git add</strong><br />
+                    <span class="term">git add <small>index.html</small></span>
+                </li>
+                <li>Faire un commit qui décrit la mise à jour de notre fichier avec la commande <strong>git commit</strong><br />
+                    <span class="term">git commit -m <small>"Ajouté le fichier index.html"</small></span>
+                </li>
+              </ol>
+              <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté,
+                nous pouvons condenser ces deux étapes de la façon suivante:</p>
+                <span class="term">git commit -a -m <small>"Ajouté le fichier index.html"</small></span>
+                <p>Pour voir les commits qui ont été fait, on utilisera la commande <strong>git log</strong></p>
+                <p>Pour modifier les message de mon dernier commit:<br />
+                  <span class="term">git commit --amend -m <small>"Mon nouveau message"</small></span><br />
+                  <span class="attention">... mais attention, on ne peut modifier ce message que si nous n'avons pas encore <strong>Pushé</strong> notre commit sur l'origine !</span>
+                </p>
           </section>
         </div>
       </div>
-
 
       <div class="row">
         <div class="col-lg-12">
@@ -69,7 +87,31 @@
           </section>
         </div>
       </div>
-    </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="page-header">
+            <h2>Récupérez du code d'un autre repository</h2>
+          </div>
+          <section>
+            <p>
+              À partir de GitHub, vous pouvez copier un repository sur votre machine.
+              Pour cela, il vous suffit de rechercher le repository qui vous intéresse sur GitHub,
+              de vous y placer, puis d'utiliser l'option "clone URL" en bas à droite de l'écran.
+            </p>
+            <p>Cette option vous propose un lien SSH, HTTPS ou Subversion.
+              Ici, nous allons choisir un lien HTTPS, le copier,
+              puis coller ce lien en utilisant la commande git clone dans le dossier que vous aurez choisi sur votre machine :
+            </p>
+            <span class="term">git clone <small>lien-fourni-par-github</small></span>
+
+          </section>
+        </div>
+      </div>
+
+
+
+    </div><!-- /.container -->
 
 
 
