@@ -6,110 +6,140 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Mon Memo Git</title>
   </head>
+
   <body>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Memo Git</h1>
+          <h1>Mémo <img src="assets/logo.png" class="logo-git"alt=""/></h1>
         </div>
       </div>
 
-      <div class="page-header">
-        <h2>Créer mon premier Repo</h2>
-      </div>
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-offset-1 col-lg-10">
           <section>
-            <p>Créer un dossier:
-              <span class="terminal">mkdir <small>nom-du-dossier</small></span>
+            <div class="page-header">
+              <h2>Créer un dossier et/ou un fichier sur mon ordinateur</h2>
+            </div>
+            <p><strong>Créer un dossier </strong>avec la commande <span class="commande">mkdir</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>mkdir</strong> <small>nomDuDossier</small></li>
+              </ul>
+            </div>
+            <p><strong>Créer un fichier </strong>avec la commande <span class="commande">touch</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>touch</strong> <small>nomDuFichier</small></li>
+              </ul>
+            </div>
+            <p>Ce placer dans le dossier avec la commande <span class="commande">cd</span> dans le terminal.</p>
+          </section>
+
+          <section>
+            <p>Pour activer un dossier comme repository Git,
+              il suffit de se placer dans ce dossier avec le terminal puis d'utiliser la commande <span class="commande">git init</span> .
             </p>
-            <p>Créer un fichier:
-              <span class="terminal">touch <small>nom-du-fichier</small></span>
-            </p>
-            <p>Ce placer dans le dossier avec la commande <strong>cd</strong> dans le terminal</p>
-            <ul>
-              <li>Pour activer un dossier comme repository Git,
-                il suffit de se placer dans ce dossier avec le terminal puis d'utiliser la commande <strong>git init</strong>.</li>
-              <li>Pour gérer un repository, Git génère un index de tous les fichiers dont il doit faire le suivi.
-                Lorsque vous créez un fichier dans un repository,
-                vous devez donc l'ajouter à l'index Git à l'aide de la commande
-                <strong>git add nomDeVotreFichier.extension</strong>. Par exemple :<br />
-                 <span class="terminal">git add <small>nom-du-fichier.extension</small></span></li>
-            </ul><br />
-              <p>Pour gagner du temps, on peut ajouter tous les fichiers dans le répertoire courant avec:
-                <span class="terminal">git add .</span>
-              </p>
-              <p>
-                Lorsque l'on doit modifier notre repository,
-                nous devons demander à Git d'enregistrer nos modifications en faisant un <strong>git commit</strong>.
-                L'option <strong>-m</strong> nous permet de lui envoyer un message décrivant les modifications effectuées,
-                ce qui s'avèrera très utile par la suite. Par exemple :<br />
-                 <span class="terminal">git commit -m <small>"Add index.html"</small></span>
-              </p>
-              <p>Petite astuce pour gagner du temps:<br />
-                lorsque nous mettons à jour un fichier dans notre repository, nous devons procéder en deux étapes :
-              </p>
-              <ol>
-                <li>Ajouter notre fichier à l'index avec la commande <strong>git add</strong><br />
-                    <span class="terminal">git add <small>index.html</small></span>
+            <div class="terminal">
+              chemin/du/dossier/NomDuDossier$ &nbsp&nbsp <strong>git init</strong>
+            </div>
+            <p><strong>Vérifier l'état des fichiers </strong>avec la commande <span class="commande">git status</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git status</strong>
+                  <p>Sur la branche master<br />
+                    Votre branche est à jour avec 'origin/master'.<br />
+                    rien à valider, la copie de travail est propre
+                  </p>
                 </li>
-                <li>Faire un commit qui décrit la mise à jour de notre fichier avec la commande <strong>git commit</strong><br />
-                    <span class="terminal">git commit -m <small>"Ajouté le fichier index.html"</small></span>
-                </li>
-              </ol>
-              <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté,
-                nous pouvons condenser ces deux étapes de la façon suivante:</p>
-                <span class="terminal">git commit -a -m <small>"Ajouté le fichier index.html"</small></span>
-                <p>Pour voir les commits qui ont été fait, on utilisera la commande <strong>git log</strong></p>
-                <p>Pour modifier les message de mon dernier commit:<br />
-                  <span class="terminal">git commit --amend -m <small>"Mon nouveau message"</small></span><br />
-                  <span class="attention">... mais attention, on ne peut modifier ce message que si nous n'avons pas encore <strong>Pushé</strong> notre commit sur l'origine !</span>
-                </p>
+              </ul>
+            </div>
+            <p>Pour gérer un repository, Git génère un index de tous les fichiers dont il doit faire le suivi.<br />
+              Lorsque vous créez un fichier dans un repository,<br />
+              vous devez donc l'ajouter à l'index Git à l'aide de la commande
+              <span class="commande">git add nomDeVotreFichier.extension</span>. Par exemple :</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git add </strong><small>NomDuFichier</small></li>
+              </ul>
+            </div>
+            <p>Pour gagner du temps, on peut ajouter tous les fichiers dans le répertoire courant avec:</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git add .</strong></li>
+              </ul>
+            </div>
+            <p><strong>Ajouter un commit </strong>avec la commande <span class="commande">git commit -m </span>.<br />
+              Lorsque l'on doit modifier notre repository,
+              nous devons demander à Git d'enregistrer nos modifications en faisant un <span class="commande">git commit -m</span>.
+              L'option <strong>-m</strong> nous permet de lui envoyer un message décrivant les modifications effectuées,
+              ce qui s'avèrera très utile par la suite.
+            </p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git commit -m <small>"Votre message"</small></strong></li>
+              </ul>
+            </div>
+            <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté,
+              nous pouvons condenser les deux étapes du git add et du git commit de la façon suivante:
+            </p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git commit -a -m <small>"Votre message"</small></strong></li>
+              </ul>
+            </div>
+            <p><strong>Pousser son travail sur le repository </strong>avec la commande <span class="commande">git push origin master</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git push origin master</strong></li>
+              </ul>
+            </div>
           </section>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="page-header">
-            <h2>Les Branches</h2>
-          </div>
           <section>
-            <p><strong>Créer une branche:</strong>
-              <span class="terminal">git branch <small>nom-de-la-branche</small></span>
-            </p>
-            <p><strong>Basculer sur une branche:</strong>
-              <span class="terminal">git checkout <small>nom-de-la-branche</small></span>
-            </p>
-            <p><strong>Supprimer une branche:</strong>
-              <span class="terminal">git branch -d <small>nom-de-la-branche</small></span>
-            </p>
+            <div class="page-header">
+              <h2>Vérifier les commits</h2>
+            </div>
+            <p><strong>Voir les commits qui ont été fait </strong>avec la commande <span class="commande">git log</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git log</strong></li>
+              </ul>
+            </div>
+            <p><strong>Modifier le message de mon dernier commit</strong>avec la commande <span class="commande">git commit --amend -m </span>.</p>
+            <span class="attention">... mais attention, on ne peut modifier ce message que si nous n'avons pas encore <strong>Pushé</strong> notre commit sur l'origine !</span>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git commit --amend -m </strong><small>"VotreNouveauMessage"</small></li>
+              </ul>
+            </div>
           </section>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="page-header">
-            <h2>Récupérez du code d'un autre repository</h2>
-          </div>
           <section>
-            <p>
-              À partir de GitHub, vous pouvez copier un repository sur votre machine.
-              Pour cela, il vous suffit de rechercher le repository qui vous intéresse sur GitHub,
-              de vous y placer, puis d'utiliser l'option "clone URL" en bas à droite de l'écran.
-            </p>
-            <p>Cette option vous propose un lien SSH, HTTPS ou Subversion.
-              Ici, nous allons choisir un lien HTTPS, le copier,
-              puis coller ce lien en utilisant la commande git clone dans le dossier que vous aurez choisi sur votre machine :
-            </p>
-            <span class="terminal">git clone <small>lien-fourni-par-github</small></span>
-
+            <div class="page-header">
+              <h2>Les branches</h2>
+            </div>
+            <p><strong>Créer une branche </strong>avec la commande <span class="commande">git branch</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git branch</strong> <small>nomDeLaBranche</small></li>
+              </ul>
+            </div>
+            <p><strong>Basculer entre les branches </strong>avec la commande <span class="commande">git checkout</span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git checkout</strong> <small>nomDeLaBranche</small></li>
+              </ul>
+            </div>
+            <p><strong>Supprimer une branche </strong>avec la commande <span class="commande">git branch -d </span>.</p>
+            <div class="terminal">
+              <ul class="term">
+                <li><strong>git branch -d </strong> <small>nomDeLaBranche</small></li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
-
-
 
     </div><!-- /.container -->
 

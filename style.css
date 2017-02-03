@@ -1,3 +1,6 @@
+body {
+  background-color: #f0eaf2;
+}
 .container {
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -7,21 +10,32 @@ h1 {
   color: black;
   text-align: center;
 }
-
-span {
-
-  line-height: 2;
+.logo-git {
+  width: 80px;
 }
+
 .terminal {
-  background-color: #811aad;
+  background-color: #7c153b;
   color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
 }
 .attention {
   color: red;
 }
+.commande {
+  background-color: #f0eaf2;
+  padding: 5px;
+}
 section {
-  background-color: #fff7df;
+  background-color: #fff;
   padding: 25px;
+  margin-bottom: 25px;
+}
+.term > li {
+    list-style-type: none;
+}
+.term > li::before {
+  content: " $ ";
+  margin-right: 25px;
 }
