@@ -28,6 +28,13 @@
       </div>
       <div class="row">
         <div class="col-xs-8">
+          <section class="help">
+            <h4 class="titleH4 text-red">Obtenir de l'aide</h4>
+            <p>Si vous avez besoin d’aide pour utiliser Git,
+              il y a trois moyens d’obtenir les pages de manuel pour toutes les commandes de Git :</p>
+              <pre>$ git help nom_de_la_commande<br>$ git nom_de_la_commande --help<br>$ man git-nom_de_la_commande</pre>
+          </section>
+
           <section>
             <p>Créer un dossier avec la commande <b>mkdir</b></p>
             <pre>$ mkdir nom_du_dossier</pre>
@@ -48,17 +55,45 @@
             <pre>chemin/du/dossier/NomDuDossier$ git init</pre>
             <br/>
 
+            <h5 class="titleH5">Vérifier l’état des fichiers</h5>
             <p>Vérifier l'état des fichiers avec la commande <b>git status</b></p>
             <pre>$ git status<br/>Sur la branche master<br/>Votre branche est à jour avec 'origin/master'.<br/>rien à valider, la copie de travail est propre</pre>
             <br>
 
+            <h4 class="titleH4 text-red">Les branches</h4>
+            <h5 class="titleH5">Créer une nouvelle branche</h5>
             <p>Créer une branche avec la commande <b>git branch nom_de_votre_branche</b></p>
             <pre>$ git branch develop</pre>
             <br>
 
+            <h5 class="titleH5">Basculer entre les branches</h5>
             <p>Basculer sur une branche avec <b>git checkout nom_de_votre_branche</b></p>
-            <pre>$ git checkout develop<br>Basculement sur la branche 'develop'<br>Votre branche est à jour avec 'origin/master'.</pre>
+            <pre>$ git checkout develop<br>Basculement sur la branche 'develop'</pre>
+            <br>
 
+            <p>Pour créer une branche et y basculer tout de suite,
+              vous pouvez lancer la commande <b>git checkout</b> avec l’option <b>-b</b> nom_de_votre_branche</p>
+            <pre>$ git checkout -b dev2</pre>
+            <br>
+
+            <p>Pour vérifier sur quelle branche nous travaillons</p>
+            <pre>$ git branch<br>* develop<br>master</pre>
+            <p>Notez le caractère <mark>*</mark> qui préfixe la branche <mark>develop</mark>, il indique la branche courante (c’est-à-dire la branche sur laquelle nous sommes)</p>
+            <br>
+            <br>
+
+            <h5 class="titleH5">Supprimer une branche</h5>
+            <p>Vous pouvez supprimer une branche avec l’option <b>-d</b> de la commande <b>git branch</b></p>
+            <pre>$ git branch -d dev2
+Branche dev2 supprimée (aad78f8).</pre>
+            <br>
+
+            <h5 class="titleH5">Suppression de branches distantes</h5>
+            <p>Vous pouvez supprimer une branche distante avec la commande <b>git push origin --delete</b></p>
+            <pre>$ git push origin --delete feature[53]
+To https://github.com/ludo-boa/memoGit
+ - [deleted]         feature[53].</pre>
+            <br>
 
             <p>Pour gérer un repository, Git génère un index de tous les fichiers
               dont il doit faire le suivi.
@@ -73,6 +108,7 @@
             <pre>$ git add .</pre>
             <br>
 
+            <h5 class="titleH5">Valider vos modifications</h5>
             <p>Ajouter un commit avec la commande <b>git commit -m </b><br />
               Lorsque l'on doit modifier notre repository,
               nous devons demander à Git d'enregistrer nos modifications en faisant un <b>git commit -m</b>.
@@ -88,10 +124,35 @@
             <pre>$ git commit -a -m "Votre message"</pre>
             <br>
 
-            <p>Pousser son travail (local) sur le repository (dépôt distant) avec la commande <b>git push origin master</b></p>
-            <pre>$ git push origin master</pre>
+            <h5 class="titleH5">Pousser son travail sur un dépôt distant</h5>
+            <p>Pousser son travail (local) sur le repository (dépôt distant) avec la commande <b>git push origin nom_de_ma_branche</b></p>
+            <pre>$ git push origin develop</pre>
             <br>
 
+          </section>
+
+          <section>
+            <h4 class="titleH4 text-red">Visualiser l’historique des validations</h4>
+            <p>Lorsque vous lancez <b>git log</b> dans le répertoire de votre projet, vous devriez obtenir un résultat qui ressemble à ceci :</p>
+            <pre>$ git log
+
+commit aad78f8df5ec3f61e4f3b8b19ee2f118aa99d166
+Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+Date:   Sun Sep 24 17:45:07 2017 +0200
+
+    update text
+
+commit 188c9162185c9466cd2f3ce9f82dd5b63cd6c711
+Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+Date:   Fri Feb 3 14:46:07 2017 +0100
+
+    update css
+
+commit 23e96829648ecaa1bb1f99b0d67a7f5759ca4252
+Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+Date:   Fri Feb 3 11:47:15 2017 +0100
+
+    add new section</pre>
           </section>
         </div>
         <div class="col-xs-4">
