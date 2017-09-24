@@ -1,156 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Mon Memo Git</title>
-  </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memo Git</title>
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <h1>Mémo <img src="assets/logo.png" class="logo-git"alt=""/></h1>
         </div>
+        <hr>
       </div>
-
       <div class="row">
-        <div class="col-lg-offset-1 col-lg-10">
+        <div class="col-xs-8">
           <section>
-            <div class="page-header">
-              <h2>Créer un dossier et/ou un fichier sur mon ordinateur</h2>
-            </div>
-            <p><strong>Créer un dossier </strong>avec la commande <span class="commande">mkdir</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>mkdir</strong> <small>nomDuDossier</small></li>
-              </ul>
-            </div>
-            <p><strong>Créer un fichier </strong>avec la commande <span class="commande">touch</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>touch</strong> <small>nomDuFichier</small></li>
-              </ul>
-            </div>
-            <p>Ce placer dans le dossier avec la commande <span class="commande">cd</span> dans le terminal.</p>
-          </section>
+            <p>Créer un dossier avec la commande <b>mkdir</b></p>
+            <pre>$ mkdir nom_du_dossier</pre>
+            <br/>
 
-          <section>
-            <p>Pour activer un dossier comme repository Git,
-              il suffit de se placer dans ce dossier avec le terminal puis d'utiliser la commande <span class="commande">git init</span> .
+            <p>Ce placer dans le dossier avec la commande <b>cd</b></p>
+            <pre>$ mkdir nom_du_dossier<br>$ cd nom_du_dossier</pre>
+            <br/>
+
+            <p>Créer un fichier avec la commande <b>touch</b></p>
+            <pre>$ touch nom_du_fichier</pre>
+            <br/>
+
+            <p>Pour activer un dossier comme repository (dépôt) Git,
+              il suffit de se placer dans ce dossier avec le terminal
+              puis d'utiliser la commande <b>git init</b> .
             </p>
-            <div class="terminal">
-              chemin/du/dossier/NomDuDossier$ &nbsp&nbsp <strong>git init</strong>
-            </div>
-            <p><strong>Vérifier l'état des fichiers </strong>avec la commande <span class="commande">git status</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git status</strong>
-                  <p>Sur la branche master<br />
-                    Votre branche est à jour avec 'origin/master'.<br />
-                    rien à valider, la copie de travail est propre
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <p>Pour gérer un repository, Git génère un index de tous les fichiers dont il doit faire le suivi.<br />
-              Lorsque vous créez un fichier dans un repository,<br />
+            <pre>chemin/du/dossier/NomDuDossier$ git init</pre>
+            <br/>
+
+            <p>Vérifier l'état des fichiers avec la commande <b>git status</b></p>
+            <pre>$ git status<br/>Sur la branche master<br/>Votre branche est à jour avec 'origin/master'.<br/>rien à valider, la copie de travail est propre</pre>
+            <br>
+
+            <p>Créer une branche avec la commande <b>git branch nom_de_votre_branche</b></p>
+            <pre>$ git branch develop</pre>
+            <br>
+
+            <p>Basculer sur une branche avec <b>git checkout nom_de_votre_branche</b></p>
+            <pre>$ git checkout develop<br>Basculement sur la branche 'develop'<br>Votre branche est à jour avec 'origin/master'.</pre>
+
+
+            <p>Pour gérer un repository, Git génère un index de tous les fichiers
+              dont il doit faire le suivi.
+              Lorsque vous créez un fichier dans un repository,
               vous devez donc l'ajouter à l'index Git à l'aide de la commande
-              <span class="commande">git add nomDeVotreFichier.extension</span>. Par exemple :</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git add </strong><small>NomDuFichier</small></li>
-              </ul>
-            </div>
-            <p>Pour gagner du temps, on peut ajouter tous les fichiers dans le répertoire courant avec:</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git add .</strong></li>
-              </ul>
-            </div>
-            <p><strong>Ajouter un commit </strong>avec la commande <span class="commande">git commit -m </span>.<br />
+              <b>git add nom_du_Fichier.extension</b>
+            </p>
+            <pre>$ git add index.html</pre>
+            <br>
+
+            <p>Pour gagner du temps, on peut ajouter tous les fichiers dans le répertoire courant avec <b>git add .</b></p>
+            <pre>$ git add .</pre>
+            <br>
+
+            <p>Ajouter un commit avec la commande <b>git commit -m </b><br />
               Lorsque l'on doit modifier notre repository,
-              nous devons demander à Git d'enregistrer nos modifications en faisant un <span class="commande">git commit -m</span>.
-              L'option <strong>-m</strong> nous permet de lui envoyer un message décrivant les modifications effectuées,
+              nous devons demander à Git d'enregistrer nos modifications en faisant un <b>git commit -m</b>.
+              L'option <b>-m</b> nous permet de lui envoyer un message décrivant les modifications effectuées,
               ce qui s'avèrera très utile par la suite.
             </p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git commit -m <small>"Votre message"</small></strong></li>
-              </ul>
-            </div>
+            <pre>$ git commit -m "votre message"</pre>
+            <br>
+
             <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté,
-              nous pouvons condenser les deux étapes du git add et du git commit de la façon suivante:
+              nous pouvons condenser les deux étapes du <b>git add</b> et du <b>git commit</b> de la façon suivante:
             </p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git commit -a -m <small>"Votre message"</small></strong></li>
-              </ul>
-            </div>
-            <p><strong>Pousser son travail sur le repository </strong>avec la commande <span class="commande">git push origin master</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git push origin master</strong></li>
-              </ul>
-            </div>
-          </section>
+            <pre>$ git commit -a -m "Votre message"</pre>
+            <br>
 
-          <section>
-            <div class="page-header">
-              <h2>Vérifier les commits</h2>
-            </div>
-            <p><strong>Voir les commits qui ont été fait </strong>avec la commande <span class="commande">git log</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git log</strong></li>
-              </ul>
-            </div>
-            <p><strong>Modifier le message de mon dernier commit</strong>avec la commande <span class="commande">git commit --amend -m </span>.</p>
-            <span class="attention">... mais attention, on ne peut modifier ce message que si nous n'avons pas encore <strong>Pushé</strong> notre commit sur l'origine !</span>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git commit --amend -m </strong><small>"VotreNouveauMessage"</small></li>
-              </ul>
-            </div>
-          </section>
+            <p>Pousser son travail (local) sur le repository (dépôt distant) avec la commande <b>git push origin master</b></p>
+            <pre>$ git push origin master</pre>
+            <br>
 
-          <section>
-            <div class="page-header">
-              <h2>Les branches</h2>
-            </div>
-            <p><strong>Créer une branche </strong>avec la commande <span class="commande">git branch</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git branch</strong> <small>nomDeLaBranche</small></li>
-              </ul>
-            </div>
-            <p><strong>Basculer entre les branches </strong>avec la commande <span class="commande">git checkout</span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git checkout</strong> <small>nomDeLaBranche</small></li>
-              </ul>
-            </div>
-            <p><strong>Supprimer une branche </strong>avec la commande <span class="commande">git branch -d </span>.</p>
-            <div class="terminal">
-              <ul class="term">
-                <li><strong>git branch -d </strong> <small>nomDeLaBranche</small></li>
-              </ul>
-            </div>
           </section>
         </div>
-      </div>
+        <div class="col-xs-4">
 
+        </div>
+      </div><!-- /.row -->
     </div><!-- /.container -->
 
-
-
-
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </body>
 </html>
