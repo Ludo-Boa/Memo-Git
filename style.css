@@ -7,11 +7,40 @@ body {
 section {
   margin: 30px 0;
 }
+section p {
+  text-align: justify;
+}
+.titleH1 {
+  position: relative;
+}
+.titleH1 small {
+  font-size: 20px;
+  left: 206px;
+  position: absolute;
+  text-decoration: underline;
+  top: 42px;
+}
+.titleH2 {
+  font-size: 22px;
+}
+.titleH3 {
+  font-size: 16px;
+  font-weight: bold;
+}
 .text-red {
   color: #f14e32;
   font-weight: 600;
 }
-.titleH5 {
-  font-size: 16px;
-  font-weight: bold;
+.logo-git {
+  width: 125px;
+}
+.page-header {
+  padding-bottom: 0;
+}
+.content-left {
+  border-right: 1px solid #ccc;
+  padding-right: 30px;
+}
+.sidebar {
+  position: fixed;
 }

@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Memo Git</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memo Git</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <h1>Mémo <img src="assets/logo.png" class="logo-git"alt=""/></h1>
-        </div>
-        <hr>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <section class="help">
-            <h4 class="titleH4 text-red">Obtenir de l'aide</h4>
-            <p>Si vous avez besoin d’aide pour utiliser Git,
-              il y a trois moyens d’obtenir les pages de manuel pour toutes les commandes de Git :</p>
-              <pre>$ git help nom_de_la_commande<br>$ git nom_de_la_commande --help<br>$ man git-nom_de_la_commande</pre>
-          </section>
+</head>
 
-          <section>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="titleH1">Mémo <img src="assets/logo.png" class="logo-git"alt=""/><br><small> in French</small></h1>
+      </div>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-xs-8">
+        <div class="content-left">
+          <!-- Section 1 ===================================================================================================================== -->
+          <section id="section1">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Les bases (ligne de commande)</h2>
+            </div>
             <p>Créer un dossier avec la commande <b>mkdir</b></p>
             <pre>$ mkdir nom_du_dossier</pre>
             <br/>
@@ -47,32 +47,43 @@
             <p>Créer un fichier avec la commande <b>touch</b></p>
             <pre>$ touch nom_du_fichier</pre>
             <br/>
-
-            <p>Pour activer un dossier comme repository (dépôt) Git,
-              il suffit de se placer dans ce dossier avec le terminal
-              puis d'utiliser la commande <b>git init</b> .
+          </section>
+          <!-- Section 2 ===================================================================================================================== -->
+          <section id="section2">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Démarrer un dépôt Git</h2>
+            </div>
+            <p>Vous pouvez principalement démarrer un dépôt Git de deux manières. La première consiste à prendre un projet ou un répertoire existant et à l’importer dans Git. La seconde consiste à cloner un dépôt Git existant sur un serveur.
+            </p>
+            <h3 class="titleH3">Initialisation d’un dépôt Git dans un répertoire existant</h3>
+            <p>Pour activer un dossier comme repository (dépôt) Git, il suffit de se placer dans ce dossier avec le terminal puis d'utiliser la commande <b>git init</b> .
             </p>
             <pre>chemin/du/dossier/NomDuDossier$ git init</pre>
+            <p>Cela crée un nouveau sous-répertoire nommé .git qui contient tous les fichiers nécessaires au dépôt — un squelette de dépôt Git. Pour l’instant, aucun fichier n’est encore versionné.
+            </p>
             <br/>
 
-            <h5 class="titleH5">Vérifier l’état des fichiers</h5>
-            <p>Vérifier l'état des fichiers avec la commande <b>git status</b></p>
-            <pre>$ git status<br/>Sur la branche master<br/>Votre branche est à jour avec 'origin/master'.<br/>rien à valider, la copie de travail est propre</pre>
-            <br>
+            <h3 class="titleH3">Cloner un dépôt existant</h3>
+            <p>Vous clonez un dépôt avec git clone [url]. Par exemple, si vous voulez cloner ce mémo, vous pouvez le faire de la manière suivante</p>
+            <pre>$ git clone https://github.com/Ludo-Boa/Memo-Git.git</pre>
+          </section>
 
-            <h4 class="titleH4 text-red">Les branches</h4>
-            <h5 class="titleH5">Créer une nouvelle branche</h5>
+          <!-- Section 3 ===================================================================================================================== -->
+          <section id="section3">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Les branches</h2>
+            </div>
+            <h3 class="titleH3">Créer une nouvelle branche</h3>
             <p>Créer une branche avec la commande <b>git branch nom_de_votre_branche</b></p>
             <pre>$ git branch develop</pre>
             <br>
 
-            <h5 class="titleH5">Basculer entre les branches</h5>
+            <h3 class="titleH3">Basculer entre les branches</h3>
             <p>Basculer sur une branche avec <b>git checkout nom_de_votre_branche</b></p>
             <pre>$ git checkout develop<br>Basculement sur la branche 'develop'</pre>
             <br>
 
-            <p>Pour créer une branche et y basculer tout de suite,
-              vous pouvez lancer la commande <b>git checkout</b> avec l’option <b>-b</b> nom_de_votre_branche</p>
+            <p>Pour créer une branche et y basculer tout de suite, vous pouvez lancer la commande <b>git checkout</b> avec l’option <b>-b</b> nom_de_votre_branche</p>
             <pre>$ git checkout -b dev2</pre>
             <br>
 
@@ -82,25 +93,32 @@
             <br>
             <br>
 
-            <h5 class="titleH5">Supprimer une branche</h5>
+            <h3 class="titleH3">Supprimer une branche</h3>
             <p>Vous pouvez supprimer une branche avec l’option <b>-d</b> de la commande <b>git branch</b></p>
             <pre>$ git branch -d dev2
-Branche dev2 supprimée (aad78f8).</pre>
+                  Branche dev2 supprimée (aad78f8).</pre>
             <br>
 
-            <h5 class="titleH5">Suppression de branches distantes</h5>
+            <h3 class="titleH3">Suppression de branches distantes</h3>
             <p>Vous pouvez supprimer une branche distante avec la commande <b>git push origin --delete</b></p>
-            <pre>$ git push origin --delete feature[53]
-To https://github.com/ludo-boa/memoGit
- - [deleted]         feature[53].</pre>
+            <pre>$ git push origin --delete develop
+                    To https://github.com/ludo-boa/memoGit
+                    - [deleted]         develop.</pre>
+            <br>
+          </section>
+
+          <!-- Section 4 ===================================================================================================================== -->
+          <section id="section4">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Enregistrer des modifications dans le dépôt</h2>
+            </div>
+            <h3 class="titleH3">Vérifier l’état des fichiers</h3>
+            <p>Vérifier l'état des fichiers avec la commande <b>git status</b></p>
+            <pre>$ git status<br/>Sur la branche master<br/>Votre branche est à jour avec 'origin/master'.<br/>rien à valider, la copie de travail est propre</pre>
             <br>
 
-            <p>Pour gérer un repository, Git génère un index de tous les fichiers
-              dont il doit faire le suivi.
-              Lorsque vous créez un fichier dans un repository,
-              vous devez donc l'ajouter à l'index Git à l'aide de la commande
-              <b>git add nom_du_Fichier.extension</b>
-            </p>
+            <h3 class="titleH3">Placer de nouveaux fichiers sous suivi</h3>
+            <p>Pour gérer un repository, Git génère un index de tous les fichiers dont il doit faire le suivi. Lorsque vous créez un fichier dans un repository, vous devez donc l'ajouter à l'index Git à l'aide de la commande <b>git add nom_du_Fichier.extension</b></p>
             <pre>$ git add index.html</pre>
             <br>
 
@@ -108,62 +126,105 @@ To https://github.com/ludo-boa/memoGit
             <pre>$ git add .</pre>
             <br>
 
-            <h5 class="titleH5">Valider vos modifications</h5>
-            <p>Ajouter un commit avec la commande <b>git commit -m </b><br />
-              Lorsque l'on doit modifier notre repository,
-              nous devons demander à Git d'enregistrer nos modifications en faisant un <b>git commit -m</b>.
-              L'option <b>-m</b> nous permet de lui envoyer un message décrivant les modifications effectuées,
-              ce qui s'avèrera très utile par la suite.
+            <h3 class="titleH3">Valider vos modifications</h3>
+            <p>Ajouter un commit avec la commande <b>git commit -m </b><br /> Lorsque l'on doit modifier notre repository, nous devons demander à Git d'enregistrer nos modifications en faisant un <b>git commit -m</b>. L'option <b>-m</b> nous permet de lui
+              envoyer un message décrivant les modifications effectuées, ce qui s'avèrera très utile par la suite.
             </p>
             <pre>$ git commit -m "votre message"</pre>
             <br>
 
-            <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté,
-              nous pouvons condenser les deux étapes du <b>git add</b> et du <b>git commit</b> de la façon suivante:
+            <p>Si nous faisons que mettre à jour un fichier que nous avions déjà ajouté, nous pouvons condenser les deux étapes du <b>git add</b> et du <b>git commit</b> de la façon suivante:
             </p>
             <pre>$ git commit -a -m "Votre message"</pre>
             <br>
+          </section>
 
-            <h5 class="titleH5">Pousser son travail sur un dépôt distant</h5>
-            <p>Pousser son travail (local) sur le repository (dépôt distant) avec la commande <b>git push origin nom_de_ma_branche</b></p>
-            <pre>$ git push origin develop</pre>
+          <!-- Section 5 ===================================================================================================================== -->
+          <section id="section5">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Travailler avec des dépôts distants</h2>
+            </div>
+            <h3 class="titleH3">Récupérer et tirer depuis des dépôts distants</h3>
+            <p>Vous pouvez utiliser la commande <b>git pull</b> qui récupère et fusionne automatiquement une branche distante dans votre branche locale.</p>
+            <pre>$ git pull nom_de_la branche_a_récupérer</pre>
             <br>
 
+            <h3 class="titleH3">Pousser son travail sur un dépôt distant</h3>
+            <p>Pousser son travail (local) sur le repository (dépôt distant) avec la commande <b>git push origin nom_de_la_branche</b></p>
+            <pre>$ git push origin develop</pre>
+            <br>
           </section>
 
-          <section>
-            <h4 class="titleH4 text-red">Visualiser l’historique des validations</h4>
-            <p>Lorsque vous lancez <b>git log</b> dans le répertoire de votre projet, vous devriez obtenir un résultat qui ressemble à ceci :</p>
+          <!-- Section 6 ===================================================================================================================== -->
+          <section id="section6">
+            <div class="page-header">
+              <h2 class="titleH2 text-red">Visualiser l’historique des validations</h2>
+            </div>
+            <p>Lorsque vous lancez <b>git log</b> dans le répertoire de votre projet, vous devriez obtenir un résultat qui ressemble à ceci</p>
             <pre>$ git log
 
-commit aad78f8df5ec3f61e4f3b8b19ee2f118aa99d166
-Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
-Date:   Sun Sep 24 17:45:07 2017 +0200
+  commit aad78f8df5ec3f61e4f3b8b19ee2f118aa99d166
+  Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+  Date:   Sun Sep 24 17:45:07 2017 +0200
 
-    update text
+      update text
 
-commit 188c9162185c9466cd2f3ce9f82dd5b63cd6c711
-Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
-Date:   Fri Feb 3 14:46:07 2017 +0100
+  commit 188c9162185c9466cd2f3ce9f82dd5b63cd6c711
+  Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+  Date:   Fri Feb 3 14:46:07 2017 +0100
 
-    update css
+      update css
 
-commit 23e96829648ecaa1bb1f99b0d67a7f5759ca4252
-Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
-Date:   Fri Feb 3 11:47:15 2017 +0100
+  commit 23e96829648ecaa1bb1f99b0d67a7f5759ca4252
+  Author: Ludo-Boa <code>&lt;user@gmail.com&gt;</code>
+  Date:   Fri Feb 3 11:47:15 2017 +0100
 
-    add new section</pre>
+      add new section</pre>
+          </section>
+          <!-- Section Help ===================================================================================================================== -->
+          <section id="help">
+            <h4 class="titleH4 text-red">Obtenir de l'aide</h4>
+            <p>Si vous avez besoin d’aide pour utiliser Git, il y a trois moyens d’obtenir les pages de manuel pour toutes les commandes de Git :</p>
+            <pre>$ git help nom_de_la_commande<br>$ git nom_de_la_commande --help<br>$ man git-nom_de_la_commande</pre>
           </section>
         </div>
-        <div class="col-xs-4">
-
+      </div>
+      <div class="col-xs-4">
+        <div class="sidebar well">
+          <ul class="sidebar-nav">
+            <li>
+              <a href="#section1">1. Les bases (ligne de commande)</a>
+            </li>
+            <li>
+              <a href="#section2">2. Démarrer un dépôt Git</a>
+            </li>
+            <li>
+              <a href="#section3">3. Les branches</a>
+            </li>
+            <li>
+              <a href="#section4">4. Enregistrer des modifications dans le dépôt</a>
+            </li>
+            <li>
+              <a href="#section5">5. Travailler avec des dépôts distants</a>
+            </li>
+            <li>
+              <a href="#section6">6. Visualiser l’historique des validations</a>
+            </li>
+            <li>
+              <a href="#help">Obtenir de l'aide</a>
+            </li>
+          </ul>
         </div>
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  </body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
 </html>
