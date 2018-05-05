@@ -19,6 +19,7 @@ section p {
   position: absolute;
   text-decoration: underline;
   top: 42px;
+  color: blue;
 }
 .titleH2 {
   font-size: 22px;
